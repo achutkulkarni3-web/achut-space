@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Space Portfolio</title>
+    <meta name="description" content="Interactive space-themed portfolio" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;700&family=JetBrains+Mono:wght@300;400;600&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="starfield" aria-hidden="true"></div>
+
+    <header class="site-header">
+      <div class="container header-inner">
+        <a href="#home" class="logo" aria-label="Go to home">Achut<span>.space</span></a>
+        <nav class="nav" aria-label="Primary Navigation">
+          <button class="nav-toggle" aria-expanded="false" aria-controls="primary-menu">☰</button>
+          <ul id="primary-menu">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#journey">Journey</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <section id="home" class="section hero" aria-label="Hero">
+        <div class="container hero-inner">
+          <div class="hero-text">
+            <p class="system-line" aria-live="polite">INITIALIZING SPACE SYSTEM...</p>
+            <h1>
+              <span class="firstname" data-text="Your Name">Your Name</span>
+              <span class="dot">.</span><span class="tld">space</span>
+            </h1>
+            <p class="subtitle">I craft beautiful, interactive web experiences with modern technologies.</p>
+            <div class="hero-cta">
+              <a class="btn primary" href="#projects">View Projects</a>
+              <a class="btn" href="#contact">Contact Me</a>
+              <a class="btn ghost" id="download-cv" href="#" download>Download CV</a>
+            </div>
+            <p class="hint">Hint: Type space-themed words like 'rocket', 'star', or 'alien' to discover hidden messages 🚀✨</p>
+          </div>
+          <div class="hero-visual" aria-hidden="true">
+            <div class="planet"></div>
+            <div class="orbit orbit-1"></div>
+            <div class="orbit orbit-2"></div>
+          </div>
+        </div>
+      </section>
+
+      <section id="about" class="section" aria-label="About Me">
+        <div class="container grid-2">
+          <div>
+            <h2>About Me</h2>
+            <p id="about-text">
+              I'm a developer passionate about backend systems, delightful UIs, and emerging tech.
+              Replace this text with your story.
+            </p>
+            <ul class="stats">
+              <li><strong id="grad-year">2026</strong><span>Graduation Year</span></li>
+              <li><strong id="project-count">10+</strong><span>Projects Completed</span></li>
+              <li><strong id="internship-count">2+</strong><span>Internships completed</span></li>
+            </ul>
+          </div>
+          <div class="about-card">
+            <img id="avatar-img" class="avatar" alt="Profile photo" src="assets/profile.jpg" />
+            <div class="about-meta">
+              <p><strong>Location:</strong> <span id="location">Your City</span></p>
+              <p><strong>Email:</strong> <a id="email" href="mailto:you@example.com">you@example.com</a></p>
+              <p><strong>Phone:</strong> <a id="phone" href="tel:+10000000000">+1 000 000 0000</a></p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="journey" class="section" aria-label="My Journey">
+        <div class="container">
+          <h2>My Journey</h2>
+          <div class="timeline" id="timeline"></div>
+        </div>
+      </section>
+
+      <section id="skills" class="section" aria-label="Skills">
+        <div class="container">
+          <h2>Skills</h2>
+          <ul class="skill-grid" id="skill-grid"></ul>
+        </div>
+      </section>
+
+      <section id="projects" class="section" aria-label="Projects">
+        <div class="container">
+          <h2>Projects</h2>
+          <div class="projects-grid" id="projects-grid"></div>
+        </div>
+      </section>
+
+      <section id="contact" class="section" aria-label="Contact Me">
+        <div class="container grid-2">
+          <div>
+            <h2>Contact Me</h2>
+            <ul class="contact-list">
+              <li>
+                <span>Email</span>
+                <a id="contact-email" href="mailto:you@example.com">you@example.com</a>
+              </li>
+              <li>
+                <span>Phone</span>
+                <a id="contact-phone" href="tel:+10000000000">+1 000 000 0000</a>
+              </li>
+              <li>
+                <span>Location</span>
+                <span id="contact-location">Your City</span>
+              </li>
+            </ul>
+          </div>
+          <form class="contact-form" id="contact-form" novalidate>
+            <label>
+              <span>Name</span>
+              <input type="text" name="name" placeholder="Your name" required />
+            </label>
+            <label>
+              <span>Email</span>
+              <input type="email" name="email" placeholder="you@example.com" required />
+            </label>
+            <label>
+              <span>Subject</span>
+              <input type="text" name="subject" placeholder="Let's connect" />
+            </label>
+            <label>
+              <span>Message</span>
+              <textarea name="message" rows="5" placeholder="Write your message..."></textarea>
+            </label>
+            <button class="btn primary" type="submit">Send Message</button>
+            <p class="form-status" id="form-status" role="status" aria-live="polite"></p>
+          </form>
+        </div>
+      </section>
+    </main>
+
+    <button class="to-top" id="to-top" aria-label="Back to top">↑</button>
+
+    <div class="assistant" id="assistant" aria-live="polite">
+      <button class="assistant-toggle" id="assistant-toggle" aria-expanded="false" aria-controls="assistant-panel">Space Assistant</button>
+      <div class="assistant-panel" id="assistant-panel" hidden>
+        <div class="assistant-messages" id="assistant-messages" role="log" aria-live="polite"></div>
+        <form class="assistant-input" id="assistant-form">
+          <input type="text" id="assistant-query" placeholder="Ask about skills, projects, or contact info..." aria-label="Assistant query" />
+          <button type="submit" class="btn">Send</button>
+        </form>
+      </div>
+    </div>
+
+    <footer class="site-footer">
+      <div class="container">
+        <p>© <span id="year"></span> Achut Kulkarni. All rights reserved.</p>
+      </div>
+    </footer>
+
+    <script src="script.js" defer></script>
+  </body>
+  </html>
+
+
